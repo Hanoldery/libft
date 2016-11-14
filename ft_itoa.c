@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
-int		st_getLength(int n)
+
+static int	st_getLength(int n)
 {
 	if (n == -2147483648)
 		return (11);
@@ -24,7 +24,7 @@ int		st_getLength(int n)
 }
 
 
-char	*st_intmin(void)
+static char	*st_intmin(void)
 {
 	char	*i;
 
@@ -33,7 +33,7 @@ char	*st_intmin(void)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		length;

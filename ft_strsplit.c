@@ -14,7 +14,7 @@
 #include "stdio.h"
 
 
-int		count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int		nbr;
 
@@ -32,7 +32,7 @@ int		count_words(char const *s, char c)
 	return (nbr);
 }
 
-int		word_length(char *s, char c)
+static int	word_length(char *s, char c)
 {
 	int		length;
 
@@ -44,7 +44,7 @@ int		word_length(char *s, char c)
 	return (length);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	int		index;
 	int		index2;

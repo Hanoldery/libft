@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*fill(char *str, char const *s, int length, int del, int index)
+static char	*fill(char *str, char const *s, int length, int del, int index)
 {
 	if (length < del)
 		length = del + 1;
@@ -28,7 +28,7 @@ char	*fill(char *str, char const *s, int length, int del, int index)
 	return (str);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	int		length;
 	int		index;

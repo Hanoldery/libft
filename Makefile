@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2016/11/11 22:32:33 by pgerbaud         ###   ########.fr        #
+#    Updated: 2016/11/14 19:19:15 by Pierre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,13 +65,13 @@ SRC= 	ft_memset.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c
-#		ft_lstnew.c
-#		ft_lstdelone.c
-#		ft_lstdel.c
-#		ft_lstadd.c
-#		ft_lstiter.c
-#		ft_lstmap.c
+		ft_putnbr_fd.c\
+		ft_lstnew.c\
+		ft_lstdelone.c\
+		ft_lstdel.c\
+		ft_lstadd.c\
+		ft_lstiter.c\
+		ft_lstmap.c
 
 INC=./includes
 
@@ -87,7 +87,7 @@ $(NAME) :
 clean :
 	rm -f $(OBJ)
 
-fclean :
+fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
