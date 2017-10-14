@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:23:12 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/10 18:36:10 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/17 19:00:41 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	int		length;
-	int		index;
+	size_t		length;
+	size_t		index;
 
 	index = 0;
 	if (s1 && s2)

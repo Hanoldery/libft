@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 09:48:22 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/10 10:14:51 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/14 22:17:47 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ int		ft_atoi(const char *str)
 
 	signe = 1;
 	result = 0;
-	while (*str == ' ' || ( 9 <= *str && *str <= 13))
+	while (*str == ' ' || (9 <= *str && *str <= 13))
 		str++;
 	if (*str == '-')
 	{
 		signe = -signe;
 		str++;
 	}
-	if (*str == '+')
-		str++;
+	else
+	{
+		if (*str == '+')
+			str++;
+	}
 	while ('0' <= *str && *str <= '9')
 	{
 		result = result * 10 + (*str - 48);

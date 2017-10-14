@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 22:35:45 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/11 22:43:20 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/15 22:52:30 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		n = -n;
 		write(fd, "-", 1);
+		ft_putnbr_fd(n, fd);
 	}
 	else if (n > 9)
 	{

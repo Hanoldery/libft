@@ -6,13 +6,11 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 11:18:44 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/11 13:58:42 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/16 19:38:21 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
-
 
 static int	count_words(char const *s, char c)
 {
@@ -54,12 +52,15 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	index = 0;
 	index2 = 0;
-	tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!(tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1))))
+		return (NULL);
 	while (count_words(s, c) > 0)
 	{
 		while (*s == c)
 			s++;
-		tab[index] = (char *)malloc(sizeof(char) * (word_length((char *)s, c) + 1));
+		if (!(tab[index] = (char *)malloc(sizeof(char) *
+				(word_length((char *)s, c) + 1))))
+			return (NULL);
 		while (*s != c && *s)
 			tab[index][index2++] = *s++;
 		tab[index][index2] = '\0';
@@ -69,8 +70,3 @@ char		**ft_strsplit(char const *s, char c)
 	tab[index] = NULL;
 	return (tab);
 }
-
-
-	//printf("length + 1 : %d \n", lengthtab);
-		//printf("first : %s\nword_length : %d index : %d  c : %c \n",s, word_length((char *)s, c), index, c);
-			//printf("index : %d index2 : %d current : %c but : %c\n", index, index2, tab[index][index2 - 1], *(s - 1));

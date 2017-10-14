@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:55:54 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/10 19:09:48 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/17 19:14:43 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		index;
-	char	*str;
+	size_t		index;
+	char		*str;
 
 	index = 0;
 	str = NULL;

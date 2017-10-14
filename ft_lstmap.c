@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 18:46:57 by Pierre            #+#    #+#             */
-/*   Updated: 2016/11/14 19:07:45 by Pierre           ###   ########.fr       */
+/*   Updated: 2016/11/16 19:35:29 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*result;
 	t_list	*temp;
@@ -25,11 +25,12 @@ t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
 		return (NULL);
 	result = f(lst);
 	temp = result;
+	lst = lst->next;
 	while (lst)
 	{
 		temp->next = f(lst);
 		if (!temp)
-		return (NULL);
+			return (NULL);
 		temp = (temp)->next;
 		lst = lst->next;
 	}

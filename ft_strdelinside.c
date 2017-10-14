@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdelinside.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 19:19:40 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/17 17:19:21 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/10/05 15:29:58 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/10/05 18:52:23 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+#include <stdio.h>
+void			ft_strdelinside(char **str, int begin, int end)
 {
-	size_t		index;
+	int		i;
 
-	index = -1;
-	while (++index < n)
-		*(char *)(s + index) = (char)NULL;
+	i = 0;
+	begin++;
+	while (*(*str + end))
+		*(*str + begin++) = *(*str + end++);
+	while (*(*str + begin))
+		*(*str + begin++) = '\0';
 }

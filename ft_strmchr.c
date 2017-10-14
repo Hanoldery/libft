@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strmchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 19:33:48 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/16 19:33:53 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/08/11 16:40:57 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/09/28 16:09:21 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+char	*ft_strmchr(const char *s1, const char *s2)
 {
-	t_list		*lst;
-	void		*cnt;
+	char	*str1;
+	char	*str2;
+	char	*tmp;
 
-	cnt = NULL;
-	lst = NULL;
-	if (!(lst = (t_list *)malloc(sizeof(t_list))))
-		return (NULL);
-	if (!(cnt = ft_memalloc(content_size + 1)))
-		return (NULL);
-	if (content)
-		ft_memcpy(cnt, content, content_size);
-	else
+	tmp = (char *)s2;
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	while (*str2 != '\0')
 	{
-		content_size = 0;
-		cnt = NULL;
+		while (*str1 != *str2 && *str2 != '\0')
+			str2++;
+		if (*str1 == *str2)
+			return (str1);
+		str1++;
+		str2 = tmp;
 	}
-	lst->content = cnt;
-	lst->content_size = content_size;
-	lst->next = NULL;
-	return (lst);
+	return ((char *)NULL);
 }

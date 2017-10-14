@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2016/11/14 19:19:15 by Pierre           ###   ########.fr        #
+#    Updated: 2017/10/05 13:39:49 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC= 	ft_memset.c\
 		ft_memchr.c\
 		ft_memcmp.c\
 		ft_strlen.c\
+		ft_strfind.c\
 		ft_strdup.c\
 		ft_strcpy.c\
 		ft_strncpy.c\
@@ -30,11 +31,14 @@ SRC= 	ft_memset.c\
 		ft_strlcat.c\
 		ft_strchr.c\
 		ft_strrchr.c\
+		ft_strmchr.c\
 		ft_strstr.c\
 		ft_strnstr.c\
 		ft_strcmp.c\
 		ft_strncmp.c\
 		ft_atoi.c\
+		ft_imaxtoa_base.c\
+		ft_uimaxtoa_base.c\
 		ft_isalpha.c\
 		ft_isdigit.c\
 		ft_isalnum.c\
@@ -46,6 +50,7 @@ SRC= 	ft_memset.c\
 		ft_memdel.c\
 		ft_strnew.c\
 		ft_strdel.c\
+		ft_strdelinside.c\
 		ft_strclr.c\
 		ft_striter.c\
 		ft_striteri.c\
@@ -55,9 +60,12 @@ SRC= 	ft_memset.c\
 		ft_strnequ.c\
 		ft_strsub.c\
 		ft_strjoin.c\
+		ft_strjoinfree.c\
 		ft_strtrim.c\
 		ft_strsplit.c\
 		ft_itoa.c\
+		ft_imaxtoa.c\
+		ft_uimaxtoa.c\
 		ft_putchar.c\
 		ft_putstr.c\
 		ft_putendl.c\

@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lltoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 17:45:39 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/16 19:43:52 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/08/21 18:18:57 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/10/04 15:41:20 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		st_getlength(int n)
+static intmax_t		st_getlength(intmax_t n)
 {
-	if (n == -2147483648)
-		return (11);
 	if (n < 0)
 		return (st_getlength(-n) + 1);
 	if (n > 9)
@@ -23,20 +21,13 @@ static int		st_getlength(int n)
 	return (1);
 }
 
-static char		*st_intmin(void)
+char			*ft_imaxtoa(intmax_t n)
 {
-	char	*i;
+	char		*str;
+	int			length;
 
-	i = ft_strnew(st_getlength(-2147483648) + 1);
-	ft_strcpy(i, "-2147483648");
-	return (i);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*str;
-	int		length;
-
+	if (n == (-9223372036854775807 - 1))
+		return (ft_strdup("-9223372036854775808"));
 	length = st_getlength(n);
 	str = (char *)malloc(sizeof(char) * length + 1);
 	if (!str)
@@ -46,8 +37,6 @@ char			*ft_itoa(int n)
 		*str = '-';
 		n = -n;
 	}
-	if (n == -2147483648)
-		return (st_intmin());
 	if (n == 0)
 		*str = '0';
 	*(str + length--) = '\0';

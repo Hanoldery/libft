@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:47:37 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/10 17:53:55 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/16 00:15:04 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	int		index;
 
-	if (s)
+	if (s && f)
 	{
 		index = ft_strlen(s);
 		while (index-- >= 0)

@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 19:33:48 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/16 19:33:53 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/07/25 17:12:22 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/08/03 20:32:17 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+char	*ft_strjoinfree(char *s1, char *s2)
 {
-	t_list		*lst;
-	void		*cnt;
+	int		length;
+	int		index;
+	char	*str;
+	char	*tmp1;
+	char	*tmp2;
 
-	cnt = NULL;
-	lst = NULL;
-	if (!(lst = (t_list *)malloc(sizeof(t_list))))
+	str = NULL;
+	index = 0;
+	tmp1 = s1;
+	tmp2 = s2;
+	if (!s1 && !s2)
 		return (NULL);
-	if (!(cnt = ft_memalloc(content_size + 1)))
+	length = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = (char *)malloc(sizeof(char) * length);
+	if (!str)
 		return (NULL);
-	if (content)
-		ft_memcpy(cnt, content, content_size);
-	else
-	{
-		content_size = 0;
-		cnt = NULL;
-	}
-	lst->content = cnt;
-	lst->content_size = content_size;
-	lst->next = NULL;
-	return (lst);
+	while (*s1)
+		*(str + index++) = *s1++;
+	while (*s2)
+		*(str + index++) = *s2++;
+	*(str + index) = '\0';
+	(tmp1) ? free(tmp1) : NULL;
+	(tmp2) ? free(tmp2) : NULL;
+	return (str);
 }

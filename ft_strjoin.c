@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 20:13:12 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/11 10:36:59 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/14 22:23:41 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		length;

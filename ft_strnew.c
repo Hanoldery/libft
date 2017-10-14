@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:42:57 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/11 22:43:26 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2016/11/17 17:23:06 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*str;
-	int		index;
+	char		*str;
+	size_t		index;
 
 	index = 0;
 	str = (char *)malloc(sizeof(char) * (size + 1));
