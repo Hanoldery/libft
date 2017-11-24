@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 18:18:57 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/10/04 15:41:20 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/11/21 16:54:52 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static intmax_t		st_getlength(intmax_t n)
 	return (1);
 }
 
-char			*ft_imaxtoa(intmax_t n)
+char				*ft_imaxtoa(intmax_t n)
 {
 	char		*str;
 	int			length;

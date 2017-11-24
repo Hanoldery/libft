@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 16:45:42 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/10/05 13:42:08 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/11/21 16:37:36 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static uintmax_t		st_getlength(uintmax_t n)
 	return (1);
 }
 
-char			*ft_uimaxtoa(uintmax_t n)
+char					*ft_uimaxtoa(uintmax_t n)
 {
 	char	*str;
 	int		length;
@@ -30,6 +30,8 @@ char			*ft_uimaxtoa(uintmax_t n)
 		return (NULL);
 	if (n == 0)
 		*str = '0';
+	if (n == UINTMAX_MAX)
+		return (ft_strdup("18446744073709551615"));
 	*(str + length--) = '\0';
 	while (n > 0)
 	{

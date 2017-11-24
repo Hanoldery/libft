@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/10/05 18:20:13 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/11/21 16:38:55 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "string.h"
 # include "stdlib.h"
 # include "unistd.h"
+# include "limits.h"
 
 typedef struct		s_list
 {
@@ -122,7 +123,6 @@ char				*ft_strnstr(const char *big, const char *little,
 		size_t len);
 
 int					ft_atoi(const char *str);
-
 
 char				*ft_imaxtoa_base(intmax_t value, int base);
 

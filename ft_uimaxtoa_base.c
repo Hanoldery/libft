@@ -6,12 +6,12 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 13:02:19 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/10/05 14:53:27 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/11/21 16:44:12 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int			ucount_final_number_size(uintmax_t value, uintmax_t base)
 {
 	int		i;
@@ -39,8 +39,8 @@ char		*ft_uimaxtoa_base(uintmax_t value, int base)
 		return ("0");
 	while (tmp != 0)
 	{
-		rslt[--i] = baser[tmp%base];
-		tmp = tmp/(long)base;
+		rslt[--i] = baser[tmp % base];
+		tmp = tmp / (long)base;
 	}
 	return (rslt);
 }
