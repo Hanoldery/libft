@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdelinside.c                                  :+:      :+:    :+:   */
+/*   ft_strdelret.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/05 15:29:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/07 19:58:32 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/12/08 13:45:51 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/12/08 13:46:22 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_strdelinside(char **str, int begin, int end)
+int		ft_strdelret(char **as, int ret)
 {
-	begin++;
-	while (*(*str + end))
-		*(*str + begin++) = *(*str + end++);
-	while (*(*str + begin))
-		*(*str + begin++) = '\0';
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+	return (ret);
 }

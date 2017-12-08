@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/11/21 16:38:55 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/12/08 13:47:02 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char				*ft_strrchr(const char *s, int c);
 
 char				*ft_strmchr(const char *s1, const char *s2);
 
+int					ft_strmintchr(const char *s1, const char *s2);
+
 int					ft_tolower(int c);
 
 int					ft_toupper(int c);
@@ -62,6 +64,8 @@ void				ft_strclr(char *s);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
 void				ft_strdel(char **as);
+
+int					ft_strdelret(char **as, int ret);
 
 void				ft_strdelinside(char **rslt, int begin, int end);
 
@@ -113,6 +117,8 @@ char				*ft_strdup(const char *s1);
 
 char				*ft_strcpy(char *dst, const char *src);
 
+char				*ft_strfill(char *dst, char src, int len);
+
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 
 char				*ft_strchr(const char *s, int c);
@@ -123,6 +129,12 @@ char				*ft_strnstr(const char *big, const char *little,
 		size_t len);
 
 int					ft_atoi(const char *str);
+
+char				*ft_itoa(int n);
+
+int					ft_iprintsize(intmax_t n);
+
+int					ft_uiprintsize(uintmax_t n);
 
 char				*ft_imaxtoa_base(intmax_t value, int base);
 
@@ -149,8 +161,6 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 int					ft_strcmp(const char *s1, const char *s2);
-
-char				*ft_itoa(int n);
 
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 

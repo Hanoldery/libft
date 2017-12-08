@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdelinside.c                                  :+:      :+:    :+:   */
+/*   ft_strfill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/05 15:29:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/07 19:58:32 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/12/04 13:17:32 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/12/04 13:18:54 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_strdelinside(char **str, int begin, int end)
+char		*ft_strfill(char *dst, char src, int len)
 {
-	begin++;
-	while (*(*str + end))
-		*(*str + begin++) = *(*str + end++);
-	while (*(*str + begin))
-		*(*str + begin++) = '\0';
+	int		i;
+
+	i = 0;
+	while (i++ < len)
+		dst[i] = src;
+	return (dst);
 }

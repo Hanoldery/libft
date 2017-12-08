@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 13:02:19 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/11/21 16:48:02 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:33:57 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ int			count_final_number_size(intmax_t value, intmax_t base)
 	return (i);
 }
 
+void		handle_neg(char **rslt, int *i, intmax_t *tmp, intmax_t value)
+{
+	if (value < 0)
+	{
+		(*rslt)[0] = '-';
+		(*i)++;
+		*tmp = -(*tmp);
+	}
+}
+
 char		*ft_imaxtoa_base(intmax_t value, int base)
 {
 	char		*baser;
@@ -32,24 +42,22 @@ char		*ft_imaxtoa_base(intmax_t value, int base)
 	intmax_t	tmp;
 	char		*rslt;
 
-	baser = ft_strdup("0123456789ABCDEF");
-	i = 0;
-	tmp = value;
+	baser = NULL;
 	i = count_final_number_size(tmp, (intmax_t)base);
+	tmp = value;
+	rslt = NULL;
 	if ((base < 2 || base > 16) || !(rslt = ft_strnew(i * 2)) || value == 0)
-		return ("0");
-	if (value < 0)
-	{
-		rslt[0] = '-';
-		i++;
-		if (base == 10 && value == -2147483648)
-			return (ft_strdup("-2147483648"));
-		tmp = -tmp;
-	}
+		return (ft_strdup("0"));
+	if (base == 10 && value == -2147483648)
+		return (ft_strdup("-2147483648"));
+	rslt = ft_strnew(i);
+	baser = ft_strdup("0123456789ABCDEF");
+	handle_neg(&rslt, &i, &tmp, value);
 	while (tmp != 0)
 	{
 		rslt[--i] = baser[tmp % base];
 		tmp = tmp / (intmax_t)base;
 	}
+	free(baser);
 	return (rslt);
 }

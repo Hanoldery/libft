@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 13:02:19 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/11/21 16:44:12 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/12/08 16:38:51 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,18 @@ char		*ft_uimaxtoa_base(uintmax_t value, int base)
 	baser = ft_strdup("0123456789ABCDEF");
 	tmp = value;
 	i = ucount_final_number_size(tmp, (uintmax_t)base);
-	if ((base < 2 || base > 16) || !(rslt = ft_strnew(i * 2)) || value == 0)
-		return ("0");
+	rslt = ft_strnew(i);
+	if ((base < 2 || base > 16) || value == 0)
+	{
+		free(baser);
+		free(rslt);
+		return (ft_strdup("0"));
+	}
 	while (tmp != 0)
 	{
 		rslt[--i] = baser[tmp % base];
 		tmp = tmp / (long)base;
 	}
+	free(baser);
 	return (rslt);
 }

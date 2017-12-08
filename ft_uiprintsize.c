@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdelinside.c                                  :+:      :+:    :+:   */
+/*   ft_uiprintsize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/05 15:29:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/07 19:58:32 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/12/05 10:33:24 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/12/05 11:33:24 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_strdelinside(char **str, int begin, int end)
+int			ft_uiprintsize(uintmax_t nbr)
 {
-	begin++;
-	while (*(*str + end))
-		*(*str + begin++) = *(*str + end++);
-	while (*(*str + begin))
-		*(*str + begin++) = '\0';
+	int		len;
+
+	len = 0;
+	while ((nbr = nbr / 10))
+		len++;
+	return (len);
 }
