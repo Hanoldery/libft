@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2017/12/08 13:47:16 by pgerbaud         ###   ########.fr        #
+#    Updated: 2017/12/19 15:15:10 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,19 +24,21 @@ SRC= 	ft_memset.c\
 		ft_strlen.c\
 		ft_strfind.c\
 		ft_strdup.c\
+		ft_strcat.c\
+		ft_strchr.c\
+		ft_strclr.c\
+		ft_strcmp.c\
 		ft_strcpy.c\
+		ft_strcut.c\
 		ft_strfill.c\
 		ft_strncpy.c\
-		ft_strcat.c\
 		ft_strncat.c\
 		ft_strlcat.c\
-		ft_strchr.c\
 		ft_strrchr.c\
 		ft_strmchr.c\
 		ft_strmintchr.c\
 		ft_strstr.c\
 		ft_strnstr.c\
-		ft_strcmp.c\
 		ft_strncmp.c\
 		ft_atoi.c\
 		ft_iprintsize.c\
@@ -56,7 +58,6 @@ SRC= 	ft_memset.c\
 		ft_strdel.c\
 		ft_strdelret.c\
 		ft_strdelinside.c\
-		ft_strclr.c\
 		ft_striter.c\
 		ft_striteri.c\
 		ft_strmap.c\
@@ -66,6 +67,7 @@ SRC= 	ft_memset.c\
 		ft_strsub.c\
 		ft_strjoin.c\
 		ft_strjoinfree.c\
+		ft_strjoinfreefirst.c\
 		ft_strtrim.c\
 		ft_strsplit.c\
 		ft_itoa.c\

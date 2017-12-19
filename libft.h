@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/08 13:47:02 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2017/12/19 15:14:00 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,11 +156,15 @@ char				*ft_strjoin(char const *s1, char const *s2);
 
 char				*ft_strjoinfree(char *s1, char *s2);
 
+char				*ft_strjoinfreefirst(char *s1, char *s2);
+
 char				*ft_strtrim(char const *s);
 
 char				**ft_strsplit(char const *s, char c);
 
 int					ft_strcmp(const char *s1, const char *s2);
+
+void				ft_strcut(char **s1, int i);
 
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 

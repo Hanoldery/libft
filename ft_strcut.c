@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strfind.c                                       :+:      :+:    :+:   */
+/*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/21 16:35:18 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/19 15:49:34 by pgerbaud         ###   ########.fr       */
+/*   Created: 2017/12/19 15:15:27 by pgerbaud          #+#    #+#             */
+/*   Updated: 2017/12/19 15:18:46 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strfind(char *str, char c)
+void		ft_strcut(char **s, int i)
 {
-	int		i;
+	int		j;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] && str[i] != c)
-		i++;
-	return (i);
+	j = 0;
+	while ((*s)[i])
+		(*s)[j++] = (*s)[i++];
+	while ((*s)[j])
+		(*s)[j++] = '\0';
 }
