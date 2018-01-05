@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 13:02:19 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/08 16:38:51 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/04 15:21:45 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ char		*ft_uimaxtoa_base(uintmax_t value, int base)
 	rslt = ft_strnew(i);
 	if ((base < 2 || base > 16) || value == 0)
 	{
-		free(baser);
-		free(rslt);
+		ft_strdel(&baser);
+		ft_strdel(&rslt);
 		return (ft_strdup("0"));
 	}
 	while (tmp != 0)

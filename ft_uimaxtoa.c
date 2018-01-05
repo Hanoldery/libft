@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 16:45:42 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/08 16:39:09 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/04 15:21:50 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char					*ft_uimaxtoa(uintmax_t n)
 		*str = '0';
 	if (n == UINTMAX_MAX)
 	{
-		free(str);
+		ft_strdel(&str);
 		return (ft_strdup("18446744073709551615"));
 	}
 	*(str + length--) = '\0';

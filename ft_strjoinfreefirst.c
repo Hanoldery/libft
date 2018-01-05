@@ -6,12 +6,12 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:12:04 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/19 20:20:34 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/05 14:09:34 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 char	*ft_strjoinfreefirst(char *s1, char *s2)
 {
 	int		length;

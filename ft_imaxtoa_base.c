@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 13:02:19 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/08 17:33:57 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:52:14 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char		*ft_imaxtoa_base(intmax_t value, int base)
 	char		*rslt;
 
 	baser = NULL;
+	tmp = 0;
 	i = count_final_number_size(tmp, (intmax_t)base);
 	tmp = value;
 	rslt = NULL;
@@ -58,6 +59,6 @@ char		*ft_imaxtoa_base(intmax_t value, int base)
 		rslt[--i] = baser[tmp % base];
 		tmp = tmp / (intmax_t)base;
 	}
-	free(baser);
+	ft_strdel(&baser);
 	return (rslt);
 }
