@@ -6,7 +6,7 @@
 /*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:45:39 by pgerbaud          #+#    #+#             */
-/*   Updated: 2016/11/16 19:43:52 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/04 15:19:35 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char			*ft_itoa(int n)
 	int		length;
 
 	length = st_getlength(n);
-	str = (char *)malloc(sizeof(char) * length + 1);
+	str = ft_strnew(length + 1);
 	if (!str)
 		return (NULL);
 	if (n < 0)

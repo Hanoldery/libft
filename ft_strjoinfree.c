@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/25 17:12:22 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/11/21 16:35:45 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/04 20:10:58 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ char	*ft_strjoinfree(char *s1, char *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	length = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(str = (char *)malloc(sizeof(char) * length)))
+	if (!(str = ft_strnew(length)))
 		return (NULL);
 	while (s1 && *s1)
 		*(str + index++) = *s1++;
 	while (s2 && *s2)
 		*(str + index++) = *s2++;
 	*(str + index) = '\0';
-	(tmp1) ? free(tmp1) : NULL;
-	(tmp2) ? free(tmp2) : NULL;
+	(tmp1) ? ft_strdel(&tmp1) : NULL;
+	(tmp2) ? ft_strdel(&tmp2) : NULL;
 	return (str);
 }

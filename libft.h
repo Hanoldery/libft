@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/19 15:14:00 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/05 13:41:10 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,9 @@ size_t				ft_strlen(const char *s);
 int					ft_strfind(char *s, char c);
 
 char				*ft_strnew(size_t size);
+
+char				*ft_straddinstr(char *sdst, char *src,
+		char *eq, int index);
 
 char				*ft_strdup(const char *s1);
 

@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2017/12/19 15:15:10 by pgerbaud         ###   ########.fr        #
+#    Updated: 2018/01/05 13:43:08 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,16 @@ SRC= 	ft_memset.c\
 		ft_memmove.c\
 		ft_memchr.c\
 		ft_memcmp.c\
+		ft_straddinstr.c\
 		ft_strlen.c\
 		ft_strfind.c\
-		ft_strdup.c\
 		ft_strcat.c\
 		ft_strchr.c\
 		ft_strclr.c\
 		ft_strcmp.c\
 		ft_strcpy.c\
 		ft_strcut.c\
+		ft_strdup.c\
 		ft_strfill.c\
 		ft_strncpy.c\
 		ft_strncat.c\
