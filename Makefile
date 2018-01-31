@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2018/01/31 16:59:52 by pgerbaud         ###   ########.fr        #
+#    Updated: 2018/01/31 17:05:51 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,17 +121,17 @@ all : $(NAME)
 	@gcc -o $@ -c $< $(CFLAGS) -I$(INC)
 
 $(NAME) : $(OBJ)
-	@printf "$(LOG_U)$(OK_C)[OK]$(STOP_C) Compiling done for\
-	 $(SILENT_C)%s$(STOP_C)       \n" "$@"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+	@printf "$(LOG_U)$(OK_C)[OK]$(STOP_C) Compiling done for\
+	 $(SILENT_C)%s$(STOP_C)       \n" "$@"
 
 clean :
 	@rm -f $(OBJ)
 
 fclean : clean
 	@printf "$(ERROR_C)[RM]$(STOP_C) $(SILENT_C)%s$(STOP_C) Deleted\n" "$(NAME)"
+	@printf "\n"
 	@rm -f $(NAME)
-	@printf "$(ERROR_C)[RM]$(STOP_C) $(SILENT_C)%s$(STOP_C) Deleted\n" "$(NAME)"
 
 re : fclean all
