@@ -6,7 +6,7 @@
 /*   By: pgerbaud <pgerbaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 18:34:03 by Pierre            #+#    #+#             */
-/*   Updated: 2016/11/16 19:41:54 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:33:56 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstadd(t_list **alst, t_list *lstnew)
 {
-	t_list	*temp;
-
 	if (!lstnew)
 		return ;
 	(lstnew)->next = *alst;

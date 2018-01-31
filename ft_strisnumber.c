@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 11:52:08 by pgerbaud          #+#    #+#             */
-/*   Updated: 2018/01/23 14:26:58 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:34:21 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_strisnumber(char *str)
 	i = 0;
 	if (ft_strlen(str) == 0)
 		return (-1);
-	while (i < ft_strlen(str))
+	while (i < (int)ft_strlen(str))
 	{
 		if ((*(str + i) < 47 || *(str + i) > 58)
 				&& *(str + i) != ' ' &&
