@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2018/01/05 18:31:29 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/01/23 11:57:13 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,21 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+intmax_t			ft_atoimax(const char *str);
 
 void				ft_bzero(void *s, size_t n);
 
 char				*ft_imaxtoa(intmax_t i);
 char				*ft_imaxtoa_base(intmax_t value, int base);
+int					*ft_inttabclr(int *tab, int size);
+void				ft_inttabdisplay(int *tab, int size);
+int					ft_inttabfind(int *tab, int size, int nbr);
 int					ft_iprintsize(intmax_t n);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
+int					ft_isnumber(char *str);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
 
@@ -44,6 +49,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstnew(void const *content, size_t content_size);
 
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -62,6 +68,7 @@ void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(const char *s);
 void				ft_putstr_fd(char const *s, int fd);
+int					ft_putstr_fdret(char const *s, int fd, int ret);
 
 char				*ft_straddinstr(char *sdst, char *src,
 						char *eq, int index);
@@ -78,6 +85,7 @@ char				*ft_strdup(const char *s1);
 int					ft_strequ(char const *s1, char const *s2);
 char				*ft_strfill(char *dst, char src, int len);
 int					ft_strfind(char *s, char c);
+int					ft_strisnumber(char *str);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);

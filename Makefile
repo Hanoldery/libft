@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2018/01/05 18:34:52 by pgerbaud         ###   ########.fr        #
+#    Updated: 2018/01/23 11:57:35 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,19 @@ NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror
 
 SRC = 	ft_atoi.c \
+		ft_atoimax.c \
 		ft_bzero.c \
 		ft_imaxtoa.c \
 		ft_imaxtoa_base.c \
+		ft_inttabclr.c \
+		ft_inttabdisplay.c \
+		ft_inttabfind.c \
 		ft_iprintsize.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
+		ft_isnumber.c \
 		ft_isprint.c \
 		ft_itoa.c \
 		ft_lstadd.c \
@@ -47,6 +52,7 @@ SRC = 	ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
+		ft_putstr_fdret.c \
 		ft_straddinstr.c \
 		ft_strcat.c \
 		ft_strchr.c \
@@ -61,6 +67,7 @@ SRC = 	ft_atoi.c \
 		ft_strequ.c \
 		ft_strfill.c \
 		ft_strfind.c \
+		ft_strisnumber.c \
 		ft_striter.c \
 		ft_striteri.c \
 		ft_strjoin.c \
