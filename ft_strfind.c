@@ -6,7 +6,7 @@
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 16:35:18 by pgerbaud          #+#    #+#             */
-/*   Updated: 2017/12/19 15:49:34 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/02/06 15:14:48 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int		ft_strfind(char *str, char c)
 		return (0);
 	while (str[i] && str[i] != c)
 		i++;
+	if ((int)ft_strlen(str) == i)
+		return (0);
 	return (i);
 }

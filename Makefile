@@ -6,7 +6,7 @@
 #    By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 14:30:42 by pgerbaud          #+#    #+#              #
-#    Updated: 2018/01/31 17:05:51 by pgerbaud         ###   ########.fr        #
+#    Updated: 2018/02/14 14:33:02 by pgerbaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC = 	ft_atoi \
 		ft_imaxtoa \
 		ft_imaxtoa_base \
 		ft_inttabclr \
+		ft_intintab \
 		ft_inttabdisplay \
 		ft_inttabfind \
 		ft_iprintsize \
@@ -53,11 +54,13 @@ SRC = 	ft_atoi \
 		ft_putstr \
 		ft_putstr_fd \
 		ft_putstr_fdret \
+		ft_read_standard \
 		ft_straddinstr \
 		ft_strcat \
 		ft_strchr \
 		ft_strclr \
 		ft_strcmp \
+		ft_strcountchar \
 		ft_strcpy \
 		ft_strcut \
 		ft_strdel \
@@ -90,6 +93,7 @@ SRC = 	ft_atoi \
 		ft_strstr \
 		ft_strsub \
 		ft_strtrim \
+		ft_strtabdel \
 		ft_tolower \
 		ft_toupper \
 		ft_uimaxtoa \
@@ -125,6 +129,7 @@ $(NAME) : $(OBJ)
 	@ranlib $(NAME)
 	@printf "$(LOG_U)$(OK_C)[OK]$(STOP_C) Compiling done for\
 	 $(SILENT_C)%s$(STOP_C)       \n" "$@"
+	@printf "\n"
 
 clean :
 	@rm -f $(OBJ)
@@ -135,3 +140,5 @@ fclean : clean
 	@rm -f $(NAME)
 
 re : fclean all
+
+.PHONY : all clean fclean re

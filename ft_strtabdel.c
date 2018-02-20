@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_strtabdel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/08 18:00:55 by pgerbaud          #+#    #+#             */
-/*   Updated: 2018/02/14 13:52:44 by pgerbaud         ###   ########.fr       */
+/*   Created: 2018/02/13 14:42:36 by pgerbaud          #+#    #+#             */
+/*   Updated: 2018/02/13 14:56:55 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-int			ft_isnumber(char *str)
+void	ft_strtabdel(char ***as)
 {
 	int		i;
+	char	**tab;
 
-	i = -1;
-
-	while (++i < (int)ft_strlen(str))
-		if (!ft_strchr("0123456789", str[i]) &&
-				!(ft_strchr("-+", str[i]) &&
-					ft_strchr("0123456789", str[i + 1]) && i == 0))
-			return (0);
-	return (1);
+	tab = *as;
+	i = 0;
+	if (tab && *tab)
+	{
+		while (tab[i])
+			free(tab[i++]);
+		free(tab);
+	}
+	as = NULL;
 }

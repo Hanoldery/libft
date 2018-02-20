@@ -6,7 +6,7 @@
 /*   By: Pierre <Pierre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:16:58 by pgerbaud          #+#    #+#             */
-/*   Updated: 2018/01/31 15:27:07 by pgerbaud         ###   ########.fr       */
+/*   Updated: 2018/02/14 14:32:27 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void				ft_bzero(void *s, size_t n);
 
 char				*ft_imaxtoa(intmax_t i);
 char				*ft_imaxtoa_base(intmax_t value, int base);
+int					ft_intintab(int *tab, int size, int nbr);
 int					*ft_inttabclr(int *tab, int size);
 void				ft_inttabdisplay(int *tab, int size);
 int					ft_inttabfind(int *tab, int size, int nbr);
@@ -70,12 +71,15 @@ void				ft_putstr(const char *s);
 void				ft_putstr_fd(char const *s, int fd);
 int					ft_putstr_fdret(char const *s, int fd, int ret);
 
+char				*ft_read_standard(int buff_size);
+
 char				*ft_straddinstr(char *sdst, char *src,
 						char *eq, int index);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strchr(const char *s, int c);
 void				ft_strclr(char *s);
 int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strcountchar(char *str, char c);
 char				*ft_strcpy(char *dst, const char *src);
 void				ft_strcut(char **s1, int i);
 void				ft_strdel(char **as);
@@ -108,6 +112,7 @@ char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strstr(const char *big, const char *little);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
+void				ft_strtabdel(char ***as);
 char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);

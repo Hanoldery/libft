@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_read_standard.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgerbaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/08 18:00:55 by pgerbaud          #+#    #+#             */
-/*   Updated: 2018/02/14 13:52:44 by pgerbaud         ###   ########.fr       */
+/*   Created: 2018/02/01 17:56:26 by pgerbaud          #+#    #+#             */
+/*   Updated: 2018/02/01 18:00:15 by pgerbaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-int			ft_isnumber(char *str)
+
+char		*ft_read_standard(int buff_size)
 {
-	int		i;
+	char	buff[buff_size];
+	char	*rslt;
+	int		r;
+	int		max;
 
-	i = -1;
-
-	while (++i < (int)ft_strlen(str))
-		if (!ft_strchr("0123456789", str[i]) &&
-				!(ft_strchr("-+", str[i]) &&
-					ft_strchr("0123456789", str[i + 1]) && i == 0))
-			return (0);
-	return (1);
+	r = 0;
+	rslt = NULL;
+	max = 0;
+	while ((r = read(0, buff, buff_size)) > 0)
+	{
+		buff[r] = '\0';
+		rslt = ft_strjoinfreefirst(rslt, buff);
+	}
+	if ((int)ft_strlen(rslt) == 0 || r < 0)
+		return ((char *)NULL);
+	return (rslt);
 }
